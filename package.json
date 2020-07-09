@@ -1,0 +1,10 @@
+{
+  "name": "template-vercel",
+  "version": "0.0.1",
+  "main": "vercel-serverless-test.js",
+  "author": "Test",
+  "description": "For test ",
+  "dependencies": {
+    "express": "latest"
+  }
+}

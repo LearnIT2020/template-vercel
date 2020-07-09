@@ -8,5 +8,7 @@ module.exports = async (req, res) => {
     console.log('parameters is body');
   }
 
+  console.log('parameters => ' + Object.keys(parameters));
+
   res.status(200).json({result : 'success'});
 }
