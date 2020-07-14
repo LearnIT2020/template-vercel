@@ -1,3 +1,5 @@
+const ziplist = require('./japan_postal_zip.json')
+
 module.exports = async (req, res) => {
   let parameters = null;
   if ( Object.keys(req.query).length > 0 ){
@@ -10,5 +12,15 @@ module.exports = async (req, res) => {
 
   console.log('parameters => ' + Object.keys(parameters));
 
-  res.status(200).json({result : 'success'});
+  let result = {};
+  if ( parameters.type && parameters.type == 'zip' &&
+       parameters.zip ) {
+    for (const zip of ziplist) { 
+      if (zip.zip == parameters.zip) {
+        result = zip;
+      } 
+    } 
+  }
+
+  res.status(200).json(result);
 }
