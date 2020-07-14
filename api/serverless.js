@@ -10,16 +10,19 @@ module.exports = async (req, res) => {
     console.log('parameters is body');
   }
 
-  //console.log('parameters => ' + Object.keys(parameters));
-
   let result = {};
-  if ( parameters.type && parameters.type == 'zip' &&
-       parameters.zip ) {
-    for (const zip of ziplist) { 
-      if (zip.zip == parameters.zip) {
-        result = zip;
+
+  if ( parameters && Object.keys(parameters).length > 0 ) {
+    console.log('parameters => ' + Object.keys(parameters));
+
+    if ( parameters.type && parameters.type == 'zip' &&
+         parameters.zip ) {
+      for (const zip of ziplist) { 
+        if (zip.zip == parameters.zip) {
+          result = zip;
+        } 
       } 
-    } 
+    }
   }
 
   res.status(200).json(result);
