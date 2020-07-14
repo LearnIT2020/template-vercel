@@ -9,7 +9,7 @@ let Util = {
     // url
     console.log(document.location.host);
     let url = document.location.href + ".netlify/functions/serverless";
-    if ( document.location.host.indexOf('.now.sh') != -1 ) {
+    if ( document.location.host.indexOf('.vercel.app') != -1 ) {
       url = document.location.href + "api/serverless";
     }
     else if ( document.location.host.indexOf('.gitpod.io') != -1 ) {
