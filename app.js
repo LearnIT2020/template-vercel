@@ -47,12 +47,14 @@ window.addEventListener( "DOMContentLoaded", function() {
     let prefecture = document.getElementById( "txtPrefecture" );
     let city = document.getElementById( "txtCity" );
     let town = document.getElementById( "txtTown" );
-    
-    zip.value = result["zip"];
-    prefecture.value = result["prefecture"];
-    city.value = result["city"];
-    town.value = result["town"];
-   };
+
+    if ( result.zip && result.prefecture && result.city && result.town ) {
+      zip.value = result["zip"];
+      prefecture.value = result["prefecture"];
+      city.value = result["city"];
+      town.value = result["town"];
+    }
+  };
   let btnExecZipSearch = document.getElementById( "btnExecZipSearch" ); 
   btnExecZipSearch.addEventListener( "click", actionClickExecuteZipSearch, false );
 
