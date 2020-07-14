@@ -10,7 +10,7 @@ module.exports = async (req, res) => {
     console.log('parameters is body');
   }
 
-  console.log('parameters => ' + Object.keys(parameters));
+  //console.log('parameters => ' + Object.keys(parameters));
 
   let result = {};
   if ( parameters.type && parameters.type == 'zip' &&
